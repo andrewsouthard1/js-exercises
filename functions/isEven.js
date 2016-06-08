@@ -1,13 +1,8 @@
 function isEven(number){
-	if(number % 2 === 0){
-		return true;
-	}
-	else{
-		return -1;
-	}
+	return number % 2 === 0;
 }
 
-function factorial(number){
+function factorialRecurs(number){
 	if (number === 0){
 	return 1;
 	}
@@ -16,7 +11,15 @@ function factorial(number){
 	}
 }
 
+function factorial(number){
+	var result = 1;
+	for(var i = 1; i<=number; i++){
+		result = result * i;
+	}
+	return result;
+}
+
 function kebabToSnake(str){
-	var newString = str.replace("-", "_");
-	return newString;
+	var newStr = str.replace(/-/g, "_");
+	return newStr;
 }
